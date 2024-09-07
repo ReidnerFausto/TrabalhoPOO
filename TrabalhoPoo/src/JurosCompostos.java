@@ -3,13 +3,14 @@ public class JurosCompostos {
     private double taxa;
     private int tempo;
 
-    public JurosCompostos() {
+    public JurosCompostos(double capital, double taxa, int tempo) {
         this.capital = capital;
         this.taxa = taxa;
         this.tempo = tempo;
     }
-
-    public static double Calculo(double capital, double taxa, int tempo) {
+    public JurosCompostos(){}
+    
+    public double Calculo() {
         for (int i = 0; i < tempo; i++) {
             capital += capital * taxa / 100;
         }
