@@ -11,8 +11,10 @@ public class Main {
         a2.calculoVariancia(numerosarray);
 
 //Atividade numero 3
-        JurosCompostos a3 = new JurosCompostos();
-        double montanteFinal = JurosCompostos.Calculo(1500, 0.5, 15);
-        System.out.println("Montante final: R$ " + montanteFinal);
+        JurosCompostos a3 = new JurosCompostos(1000.0, 0.05, 2, 12);
+        double montante = a3.calcularMontante();
+        double jurosCompostos = a3.calcularJuros();
+        System.out.println("Montante: " + montante );
+        System.out.println("Juros Compostos: " + jurosCompostos);
     }
 }
