@@ -1,4 +1,4 @@
-public class Atividade {
+public class Main {
     //Atividade numero 1
     public void main(String[] args) {
         EquacaoSegundoGrau a1 = new EquacaoSegundoGrau(2, 10, 4);
