@@ -1,37 +1,56 @@
 public class JurosCompostos {
-    private double capital;
-    private double taxa;
-    private int tempo;
 
-    public JurosCompostos() {
-        this.capital = capital;
-        this.taxa = taxa;
+    private double capitalInicial;
+    private double taxaJuros;
+    private int tempo;
+    private int frequencia;
+
+    public JurosCompostos(double capitalInicial, double taxaJuros, int tempo, int frequencia) {
+        this.capitalInicial = capitalInicial;
+        this.taxaJuros = taxaJuros;
         this.tempo = tempo;
+        this.frequencia = frequencia;
     }
-    
-    public static Calculo(double capital, double taxa, int tempo) {
-        for (int i = 0; i < tempo; i++) {
-            capital += capital * taxa / 100;
-        }
-        return capital;
+
+    public JurosCompostos(){}
+
+    public double calcularMontante() {
+        return capitalInicial * Math.pow(1 + (taxaJuros / frequencia), frequencia * tempo);
     }
-    public double getCapital() {
-        return capital;
+
+    public double calcularJuros() {
+        return calcularMontante() - capitalInicial;
     }
-    public void setCapital(double capital) {
-        this.capital = capital;
+
+    public double getCapitalInicial() {
+        return capitalInicial;
     }
-    public double getTaxa() {
-        return taxa;
+
+    public void setCapitalInicial(double capitalInicial) {
+        this.capitalInicial = capitalInicial;
     }
-    public void setTaxa(double taxa) {
-        this.taxa = taxa;
+
+    public double getTaxaJuros() {
+        return taxaJuros;
     }
+
+    public void setTaxaJuros(double taxaJuros) {
+        this.taxaJuros = taxaJuros;
+    }
+
     public int getTempo() {
         return tempo;
     }
+
     public void setTempo(int tempo) {
         this.tempo = tempo;
     }
-}
 
+    public int getFrequencia() {
+        return frequencia;
+    }
+
+    public void setFrequencia(int frequencia) {
+        this.frequencia = frequencia;
+    }
+}
